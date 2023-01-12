@@ -4,3 +4,6 @@
 \name{pmartR}
 \alias{pmartR}
 \title{Panomics Marketplace - Quality Control and Statistical Analysis for Panomics Data}
+\description{
+Quality Control and Statistical Analysis for Panomics Data
+}

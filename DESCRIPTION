@@ -48,8 +48,10 @@ Suggests:
     knitr,
     rmarkdown,
     testthat,
-    survival
+    survival,
+    pmartRdata
 Remotes:
+    pmartR/pmartRdata,
     hafen/trelliscopejs
 RoxygenNote: 7.2.3
 Encoding: UTF-8

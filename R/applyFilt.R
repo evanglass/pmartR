@@ -1004,7 +1004,8 @@ applyFilt.rmdFilt <- function (filter_object, omicsData,
 applyFilt.proteomicsFilt <- function (filter_object,
                                       omicsData,
                                       min_num_peps = NULL,
-                                      redundancy = FALSE) {
+                                      redundancy = FALSE,
+                                      ...) {
 
   # Perform initial checks on the input arguments ------------------------------
 
@@ -1275,7 +1276,8 @@ applyFilt.imdanovaFilt <- function (filter_object,
                                     comparisons = NULL,
                                     min_nonmiss_anova = NULL,
                                     min_nonmiss_gtest = NULL,
-                                    remove_singleton_groups = TRUE) {
+                                    remove_singleton_groups = TRUE,
+                                    ...) {
 
   # #' @details If filter_method="combined" is specified, then both the
   # \code{anova_filter} and \code{gtest_filter} are applied to the data, and the
