@@ -175,7 +175,7 @@ applyFilt <- function (filter_object, omicsData, ...) {
 #' @export
 #' @name applyFilt
 #' @rdname applyFilt
-applyFilt.moleculeFilt <- function(filter_object, omicsData, min_num=2){
+applyFilt.moleculeFilt <- function(filter_object, omicsData, min_num=2, ...){
 
   # Perform some initial checks on the input arguments -------------------------
 
@@ -333,7 +333,7 @@ applyFilt.moleculeFilt <- function(filter_object, omicsData, min_num=2){
 #' @export
 #' @name applyFilt
 #' @rdname applyFilt
-applyFilt.totalCountFilt <- function(filter_object, omicsData, min_count){
+applyFilt.totalCountFilt <- function(filter_object, omicsData, min_count, ...){
   
   # Perform some initial checks on the input arguments -------------------------
   
@@ -462,7 +462,7 @@ applyFilt.totalCountFilt <- function(filter_object, omicsData, min_count){
 #' @name applyFilt
 #' @rdname applyFilt
 applyFilt.RNAFilt <- function(filter_object, omicsData, 
-                              min_nonzero = NULL, size_library = NULL){
+                              min_nonzero = NULL, size_library = NULL, ...){
   
   # Perform some initial checks on the input arguments -------------------------
   
@@ -633,7 +633,7 @@ applyFilt.RNAFilt <- function(filter_object, omicsData,
 #' @export
 #' @name applyFilt
 #' @rdname applyFilt
-applyFilt.cvFilt <- function (filter_object, omicsData, cv_threshold = 150) {
+applyFilt.cvFilt <- function (filter_object, omicsData, cv_threshold = 150, ...) {
 
   # Perform some initial checks on the input arguments -------------------------
 
@@ -793,7 +793,8 @@ applyFilt.cvFilt <- function (filter_object, omicsData, cv_threshold = 150) {
 #' @rdname applyFilt
 applyFilt.rmdFilt <- function (filter_object, omicsData,
                                pvalue_threshold = 0.0001,
-                               min_num_biomolecules = 50) {
+                               min_num_biomolecules = 50,
+                               ...) {
 
   # Perform some initial checks on the input arguments -------------------------
 
@@ -1804,7 +1805,7 @@ applyFilt.imdanovaFilt <- function (filter_object,
 #' @export
 #' @name applyFilt
 #' @rdname applyFilt
-applyFilt.customFilt <- function (filter_object, omicsData) {
+applyFilt.customFilt <- function (filter_object, omicsData, ...) {
 
   # Perform initial checks on the input arguments ------------------------------
 

@@ -1,6 +1,7 @@
 #' Panomics Marketplace - Quality Control and Statistical Analysis for Panomics Data
 #' 
 #' @docType package
+#' @description Quality Control and Statistical Analysis for Panomics Data
 #' @importFrom Rcpp evalCpp
 #' 
 #' @importFrom stats anova aov as.formula binomial complete.cases cor dist ecdf formula glm hclust lm mad median model.matrix na.omit p.adjust.methods pbinom pchisq qchisq quantile runif sd setNames t.test var

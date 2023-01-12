@@ -893,7 +893,7 @@ rmd_filter <- function (omicsData,
       ## proceed, to check the rank of cov.mat ##
 
       ## Conduct Robust PCA ##
-      robpca.res = rrcov:::PcaHubert(x = rmd.vals[,-1],
+      robpca.res = rrcov::PcaHubert(x = rmd.vals[,-1],
                                      k = (ncol(rmd.vals)-1),
                                      mcd = FALSE,
                                      scale = FALSE)
@@ -982,7 +982,7 @@ rmd_filter <- function (omicsData,
   if (!exists("robpca.res")) {
 
     ## Conduct Robust PCA ##
-    robpca.res = rrcov:::PcaHubert(x = rmd.vals[,-1],
+    robpca.res = rrcov::PcaHubert(x = rmd.vals[,-1],
                                    k = (ncol(rmd.vals)-1),
                                    mcd = FALSE,
                                    scale = FALSE)
@@ -1262,7 +1262,7 @@ run_group_meancor <- function(omicsData, mintR_groupDF, ignore_singleton_groups 
     # average that value to get the correlation for that particular sample/group
     omicsData_singletons <- omicsData
     omicsData_singletons$f_data$Dummy <- "dummy" # create a dummy grouping variable so that all samples belong to same group
-    omicsData_singletons <- group_designation(omicsData_singletons, main_effect = "Dummy")
+    omicsData_singletons <- group_designation(omicsData_singletons, main_effects = "Dummy")
 
     prwse.grp.cors.all <- cor(omicsData_singletons$e_data[, -which(names(omicsData_singletons$e_data) == get_edata_cname(omicsData_singletons))], use = "pairwise.complete.obs")
 
@@ -1281,7 +1281,7 @@ run_group_meancor <- function(omicsData, mintR_groupDF, ignore_singleton_groups 
     for(i in 1:length(nonsingleton_groups)){
 
       # pull sample names from group.data in current group #
-      nms = as.character(mintR_groupDF[which(mintR_groupDF$Group == nonsingleton_groups[i]), samp_id])
+      nms = as.character(mintR_groupDF[which(mintR_groupDF$Group == nonsin.gleton_groups[i]), samp_id])
 
       # pull column numbers corresponding to above names #
       grp.col.ids[[i]] = which(names(omicsData_nonsingletons$e_data) %in% nms)
