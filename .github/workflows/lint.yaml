@@ -6,10 +6,10 @@ on:
   pull_request:
     branches: [master, develop]
 
-name: R-CMD-check
+name: lint
 
 jobs:
-  R-CMD-check:
+  lint:
     runs-on: ubuntu-latest
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
@@ -24,17 +24,16 @@ jobs:
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
           extra-packages: |
-            any::rcmdcheck
+            r-lib/lintr
             github::pmartR/pmartRdata@master
-          needs: check
+            local::.
+          needs: lint
           pak-version: devel # See https://github.com/r-lib/actions/issues/559
-      
-      - uses: r-lib/actions/setup-pandoc@v2
-      
-      - uses: r-lib/actions/check-r-package@v2
-        env:
-          '_R_CHECK_LIMIT_CORES_': 'warn'
-        with:
-          args: 'c("--no-manual")'
-          build_args: 'c("--no-manual")'
-          error-on: '"error"'
+
+      - name: Lint
+        run: |
+          library(lintr)
+          lint_package(linter = linters_with_defaults(
+            # options go here
+          ))
+        shell: Rscript {0}
